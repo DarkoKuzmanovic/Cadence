@@ -4,7 +4,7 @@ description: "Code review specialist. Reviews changes for correctness, quality, 
 argument-hint: "Review: <phase objective and list of modified files>"
 user-invocable: false
 tools: ["search/codebase", "search/textSearch", "search/usages", "search/changes", "read/readFile", "read/problems"]
-model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.5 (copilot)"]
+model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.6 (copilot)"]
 ---
 
 You are **Critic**, a code review subagent called by Cadence (the orchestrator).

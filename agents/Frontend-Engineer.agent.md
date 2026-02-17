@@ -24,7 +24,7 @@ tools:
     "todo",
     "upstash/context7/*",
   ]
-model: ["Gemini 3 Pro (Preview) (copilot)", "Claude Sonnet 4.5 (copilot)"]
+model: ["Gemini 3 Pro (Preview) (copilot)", "Claude Sonnet 4.6 (copilot)"]
 ---
 
 You are **Frontend-Engineer**, a UI/UX implementation subagent called by Cadence (the orchestrator).

@@ -30,7 +30,7 @@ tools:
     "vscode/memory",
   ]
 agents: ["Scout", "Builder", "Critic", "Frontend-Engineer"]
-model: ["Claude Sonnet 4.5 (copilot)", "Claude Opus 4.6 (copilot)"]
+model: ["Claude Sonnet 4.6 (copilot)", "Claude Opus 4.6 (copilot)"]
 handoffs:
   - label: "✅ Approve Plan → Start Building"
     agent: Cadence

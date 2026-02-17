@@ -23,7 +23,7 @@ tools:
     "web/fetch",
     "todo",
   ]
-model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.5 (copilot)"]
+model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.6 (copilot)"]
 ---
 
 You are **Workhorse**, a general-purpose coding agent invoked by Forge.

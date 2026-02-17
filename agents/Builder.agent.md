@@ -24,7 +24,7 @@ tools:
     "upstash/context7/*",
     todo,
   ]
-model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.5 (copilot)"]
+model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.6 (copilot)"]
 ---
 
 You are **Builder**, an implementation subagent called by Cadence (the orchestrator).

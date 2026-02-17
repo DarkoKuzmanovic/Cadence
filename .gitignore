@@ -40,6 +40,9 @@ MANIFEST
 .DS_Store
 Thumbs.db
 
+# Miscellaneous
+ideas.md
+
 # User-specific config (for testing)
 test_config.toml
 

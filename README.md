@@ -129,6 +129,25 @@ For comprehensive installation instructions, platform-specific notes, troublesho
 - **Windows:** `%APPDATA%\Code - Insiders\User\prompts\`
 - **Skills:** `~/.agents/skills/` (all platforms)
 
+## Manual Installation (No Installer)
+
+If you prefer to move files manually without using `install.py`:
+
+### Agents & Instructions
+
+Copy all `.agent.md` and `.instructions.md` files from the repository's `agents/`, `instructions/`, or `prompts/` directories to your VS Code User prompts folder:
+
+- **Linux:** `cp agents/*.agent.md prompts/*.prompt.md instructions/*.instructions.md ~/.config/Code\ -\ Insiders/User/prompts/`
+- **macOS:** `cp agents/*.agent.md prompts/*.prompt.md instructions/*.instructions.md ~/Library/Application\ Support/Code\ -\ Insiders/User/prompts/`
+- **Windows:** `copy agents\*.agent.md %APPDATA%\Code - Insiders\User\prompts\` (repeat for prompts/instructions)
+
+### Skills
+
+Copy skill directories to `~/.agents/skills/`:
+
+- **Linux/macOS:** `cp -r skills/* ~/.agents/skills/`
+- **Windows:** `xcopy /E /I skills\* %USERPROFILE%\.agents\skills\`
+
 ## Requirements
 
 - Python 3.8+

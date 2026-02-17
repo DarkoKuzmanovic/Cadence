@@ -122,7 +122,7 @@ These are placed in the VS Code User prompts directory:
 
 **File types:**
 
-- `*.agent.md` — Agent definition files
+- `*.agent.md` — Agent definition files (stored in `agents/` directory)
 - `*.instructions.md` — Global instruction files
 
 ### Skill Files
@@ -222,7 +222,7 @@ python install.py
 
 #### TUI Workflow
 
-1. **Browse Files** — The TUI scans the current directory for `.agent.md`, `.instructions.md`, and `SKILL.md` files.
+1. **Browse Files** — The TUI scans the repository for `.agent.md` files in `agents/`, `.instructions.md` files in `instructions/`, and `SKILL.md` files in `skills/`.
 2. **Select Files** — Use `space` to toggle selection. Files are auto-selected if they are new or have updates.
 3. **Preview Changes** — Press `enter` to see a diff of what will change.
 4. **Install** — Press `i` to install all selected files. Backups are created automatically.

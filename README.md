@@ -44,7 +44,7 @@ python install.py status
 python install.py --help
 ```
 
-The TUI will scan the current directory for agent files (`.agent.md`), instruction files (`.instructions.md`), and skill directories (`SKILL.md`). Select files with `space`, press `i` to install.
+The TUI will scan the repository for agent files in `agents/` (`.agent.md`), instruction files in `instructions/` (`.instructions.md`), and skill directories in `skills/` (`SKILL.md`). Select files with `space`, press `i` to install.
 
 ## Usage Examples
 
@@ -81,6 +81,8 @@ python install.py status /path/to/workspace
 # │ Builder.agent.md │ ✓ Up-to-date     │ 2026-02-17 ... │ 2026-02-17 ...   │
 # │ Scout.agent.md   │ ↓ Update avail.  │ 2026-02-16 ... │ 2026-02-17 ...   │
 # └──────────────────┴──────────────────┴────────────────┴──────────────────┘
+#
+# Note: Agent files are stored in agents/ directory in the repository
 ```
 
 ### CLI Uninstall Command

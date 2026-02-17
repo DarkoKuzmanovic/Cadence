@@ -26,9 +26,11 @@ def temp_workspace(tmp_path):
     workspace = tmp_path / "workspace"
     workspace.mkdir()
 
-    # Create repo agent files
-    (workspace / "Builder.agent.md").write_text("# Builder")
-    (workspace / "Scout.agent.md").write_text("# Scout")
+    # Create repo agent files in agents/ subdirectory
+    agents_dir = workspace / "agents"
+    agents_dir.mkdir()
+    (agents_dir / "Builder.agent.md").write_text("# Builder")
+    (agents_dir / "Scout.agent.md").write_text("# Scout")
 
     # Create repo instruction files
     instructions_dir = workspace / "instructions"
@@ -153,8 +155,8 @@ class TestStatusCommand:
         prompts_dir = temp_install_dir["prompts"]
         skills_dir = temp_install_dir["skills"]
 
-        # Copy file from workspace to install dir
-        repo_file = temp_workspace / "Builder.agent.md"
+        # Copy file from workspace/agents to install dir
+        repo_file = temp_workspace / "agents" / "Builder.agent.md"
         installed_file = prompts_dir / "Builder.agent.md"
         shutil.copy2(repo_file, installed_file)
 
@@ -177,7 +179,7 @@ class TestStatusCommand:
         time.sleep(0.01)
 
         # Update repo file (newer)
-        repo_file = temp_workspace / "Builder.agent.md"
+        repo_file = temp_workspace / "agents" / "Builder.agent.md"
         repo_file.write_text("# New Builder")
 
         with patch('cadence_installer.cli.detect_vscode_insiders_paths', return_value=temp_install_dir), \
@@ -194,7 +196,7 @@ class TestStatusCommand:
         skills_dir = temp_install_dir["skills"]
 
         # Create repo file first
-        repo_file = temp_workspace / "Builder.agent.md"
+        repo_file = temp_workspace / "agents" / "Builder.agent.md"
         repo_file.write_text("# Original")
         time.sleep(0.01)
 

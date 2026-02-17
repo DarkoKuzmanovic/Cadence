@@ -162,18 +162,20 @@ class InstallerApp(App):
         vscode_paths = detect_vscode_insiders_paths()
         agents_skills_path = detect_agents_skills_path()
 
-        # Scan for agent files
-        for agent_file in self.workspace_root.glob("*.agent.md"):
-            dest = vscode_paths["prompts"] / agent_file.name
-            status = compare_file_times(agent_file, dest)
+        # Scan for agent files in agents/
+        agents_dir = self.workspace_root / "agents"
+        if agents_dir.exists():
+            for agent_file in agents_dir.glob("*.agent.md"):
+                dest = vscode_paths["prompts"] / agent_file.name
+                status = compare_file_times(agent_file, dest)
 
-            self.file_items.append(FileItem(
-                source=agent_file,
-                dest=dest,
-                status=status,
-                relative_source=agent_file.name,
-                relative_dest=f"User/prompts/{agent_file.name}"
-            ))
+                self.file_items.append(FileItem(
+                    source=agent_file,
+                    dest=dest,
+                    status=status,
+                    relative_source=f"agents/{agent_file.name}",
+                    relative_dest=f"User/prompts/{agent_file.name}"
+                ))
 
         # Scan for instruction files
         instructions_dir = self.workspace_root / "instructions"

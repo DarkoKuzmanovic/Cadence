@@ -57,19 +57,21 @@ def get_repo_files(workspace: Path) -> List[FileInfo]:
     if not workspace.exists():
         return repo_files
 
-    # Find .agent.md files
-    for agent_file in workspace.glob("*.agent.md"):
-        if validate_file_type(agent_file):
-            version = _format_mtime(agent_file)
-            repo_files.append(
-                FileInfo(
-                    name=agent_file.name,
-                    path=agent_file,
-                    state=FileState.NOT_INSTALLED,
-                    installed_version=None,
-                    repo_version=version,
+    # Find .agent.md files in agents/
+    agents_dir = workspace / "agents"
+    if agents_dir.exists():
+        for agent_file in agents_dir.glob("*.agent.md"):
+            if validate_file_type(agent_file):
+                version = _format_mtime(agent_file)
+                repo_files.append(
+                    FileInfo(
+                        name=agent_file.name,
+                        path=agent_file,
+                        state=FileState.NOT_INSTALLED,
+                        installed_version=None,
+                        repo_version=version,
+                    )
                 )
-            )
 
     # Find .instructions.md files in instructions/
     instructions_dir = workspace / "instructions"

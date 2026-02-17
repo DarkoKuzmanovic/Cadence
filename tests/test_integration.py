@@ -216,8 +216,10 @@ def test_full_install_workflow(tmp_path):
     workspace = tmp_path / "workspace"
     workspace.mkdir()
 
-    # Create test files
-    agent_file = workspace / "Test.agent.md"
+    # Create test files in agents/ subdirectory
+    agents_dir = workspace / "agents"
+    agents_dir.mkdir()
+    agent_file = agents_dir / "Test.agent.md"
     agent_file.write_text("# Test Agent\n")
 
     instructions_dir = workspace / "instructions"

@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cadence-installer"
+version = "1.0.0"
+description = "Automated installer for the Cadence multi-agent orchestration system"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Darko Kuzmanovic", email = "darko.kuzmanovic@gmail.com"}
+]
+keywords = ["vscode", "copilot", "agents", "installer", "tui", "cli"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Tools",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "textual>=0.47.0",
+    "rich>=13.0.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/DarkoKuzmanovic/Cadence"
+Repository = "https://github.com/DarkoKuzmanovic/Cadence.git"
+Issues = "https://github.com/DarkoKuzmanovic/Cadence/issues"
+Changelog = "https://github.com/DarkoKuzmanovic/Cadence/blob/main/CHANGELOG.md"
+
+[project.scripts]
+cadence-install = "install:main"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cadence_installer*"]
+exclude = ["tests*"]

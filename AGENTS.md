@@ -4,20 +4,21 @@ A minimal multi-agent orchestration system for VS Code Copilot. 3+1 agents, 3 st
 
 ## Commands
 
-Installation is manual. Copy `.agent.md` files to:
+Use the installer (`python install.py`) or copy files manually:
 
-- **Linux:** `~/.config/Code - Insiders/User/prompts/`
-- **macOS:** `~/Library/Application Support/Code - Insiders/User/prompts/`
-- **Windows:** `%APPDATA%\Code - Insiders\User\prompts\`
+- **Agents/Instructions:** `~/.config/Code - Insiders/User/prompts/` (Linux)
+- **Skills:** `~/.agents/skills/`
+
+See [INSTALL.md](INSTALL.md) for all platforms and recommended VS Code settings.
 
 ## Architecture
 
 Multi-agent system with specialized roles:
 
-- **Cadence (Opus):** Planner and orchestrator.
-- **Scout (Gemini):** Parallel read-only exploration.
-- **Builder (Sonnet):** TDD implementation.
-- **Critic (Sonnet):** Optional code review.
+- **Cadence (Opus 4.6 / Sonnet 4.6):** Planner and orchestrator.
+- **Scout (Gemini 3 Flash / Haiku 4.5):** Parallel read-only exploration.
+- **Builder (Opus 4.6 / Sonnet 4.6):** TDD implementation.
+- **Critic (Opus 4.6 / Sonnet 4.6):** Code review and verification.
 
 ## Conventions
 

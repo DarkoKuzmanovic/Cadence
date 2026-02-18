@@ -38,18 +38,48 @@ Comprehensive installation, configuration, and usage instructions for the Cadenc
 
    Install the Copilot extension in VS Code from the Extensions marketplace or visit [github.com/features/copilot](https://github.com/features/copilot).
 
-### VS Code Settings (Required)
+### VS Code Settings
 
-Add to your VS Code `settings.json`:
+Add to your VS Code `settings.json` (`Ctrl+Shift+P` → "Preferences: Open User Settings (JSON)"):
 
-```json
+#### Required
+
+```jsonc
 {
+  // Core — without these, Cadence's subagent orchestration won't work
   "chat.customAgentInSubagent.enabled": true,
-  "terminal.integrated.chatSandbox.enabled": true
+  "terminal.integrated.chatSandbox.enabled": true,
+  "chat.useAgentSkills": true
 }
 ```
 
-These settings enable custom agents to invoke subagents and allow terminal access during chat sessions.
+#### Recommended
+
+```jsonc
+{
+  // Prompt queuing — lets Cadence queue Builder/Critic invocations back-to-back
+  "chat.requestQueuing.enabled": true,
+  "chat.requestQueuing.defaultAction": "steer",
+
+  // Anthropic context optimization — clears stale tool results in long sessions
+  "github.copilot.chat.anthropic.contextEditing.enabled": true,
+
+  // Extended thinking budget for planning (Cadence benefits most)
+  "github.copilot.chat.anthropic.thinking.budgetTokens": 10000,
+
+  // Terminal sandboxing — restricts agent file/network access to workspace
+  "chat.tools.terminal.sandbox.enabled": true,
+
+  // Search subagent — enables Scout's parallel search capabilities
+  "github.copilot.chat.searchSubagent.enabled": true,
+
+  // Integrated browser — Frontend-Engineer can preview localhost
+  "simpleBrowser.useIntegratedBrowser": true,
+
+  // Copilot Memory — enables crash recovery state persistence
+  "github.copilot.chat.copilotMemory.enabled": true
+}
+```
 
 ---
 

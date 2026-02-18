@@ -3,13 +3,13 @@ name: Scout
 description: "Fast codebase exploration with optional doc verification. Finds files, usages, dependencies, and patterns."
 argument-hint: "Find files, usages, and context related to: <exploration goal>"
 user-invocable: false
+disable-model-invocation: true
 tools:
   [
     "search/codebase",
     "search/fileSearch",
     "search/textSearch",
     "search/listDirectory",
-    "search/searchSubagent",
     "search/usages",
     "read/readFile",
     "read/problems",

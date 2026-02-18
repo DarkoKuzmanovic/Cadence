@@ -1,6 +1,7 @@
 ---
 name: tdd-workflow
 description: Test-Driven Development workflow for implementation agents. Use when writing new features, fixing bugs, or refactoring code. Covers red-green-refactor cycle, test patterns, and verification steps.
+disable-model-invocation: true
 ---
 
 # TDD Workflow

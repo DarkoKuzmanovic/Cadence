@@ -23,6 +23,7 @@ tools:
     "web/fetch",
     "todo",
     "upstash/context7/*",
+    "vscode/openIntegratedBrowser",
   ]
 model: ["Gemini 3 Pro (Preview) (copilot)", "Claude Sonnet 4.6 (copilot)"]
 ---

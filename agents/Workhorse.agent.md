@@ -21,6 +21,7 @@ tools:
     "execute/awaitTerminal",
     "search/changes",
     "web/fetch",
+    "upstash/context7/*",
     "todo",
   ]
 model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.6 (copilot)"]

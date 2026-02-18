@@ -28,17 +28,20 @@ tools:
     "agent",
     "todo",
     "vscode/memory",
+    "vscode.mermaid-chat-features/renderMermaidDiagram",
   ]
 agents: ["Scout", "Builder", "Critic", "Frontend-Engineer"]
-model: ["Claude Sonnet 4.6 (copilot)", "Claude Opus 4.6 (copilot)"]
+model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.6 (copilot)"]
 handoffs:
   - label: "✅ Approve Plan → Start Building"
     agent: Cadence
     prompt: "Plan approved. Begin Phase 1 implementation."
+    model: "Claude Opus 4.6 (copilot)"
     send: false
   - label: "✅ Commit & Continue"
     agent: Cadence
     prompt: "Phase committed. Proceed to next phase."
+    model: "Claude Opus 4.6 (copilot)"
     send: false
 ---
 
@@ -127,7 +130,7 @@ When delegating to subagents, describe the **objective and acceptance criteria**
 #### 3C. Commit
 
 1. Present phase summary to user: what changed, files touched, review status.
-2. Update `.agents/plan.md` — mark phase as ✅ complete.
+2. Update `.agents/plan.md` — mark phase as ✅ complete. **For plans with >5 phases:** summarize completed phases to a single status line (e.g., "Phases 1-4: ✅ Complete") to conserve context. Keep only the current and next phase in full detail.
 3. Log key decisions to `.agents/decisions.md` (append, don't overwrite).
 4. Update `.agents/state.md` with current progress.
 5. Persist critical state to **Copilot Memory**: task name, current phase, completion status, any blocking decisions. This supplements file-based state and survives workspace resets.
@@ -282,6 +285,8 @@ If Cadence is interrupted mid-task (crash, timeout, closed chat):
    - **Status: Awaiting Commit** → present the phase summary and commit message again.
    - **Status: Planning** → re-present the plan for user approval.
 6. Do NOT re-execute already-completed phases.
+
+**Conflict resolution:** If Copilot Memory and `.agents/state.md` disagree, trust Copilot Memory — it survives workspace resets and is less likely to be stale.
 
 If state files are missing or corrupted, check Copilot Memory first. If that's also empty, ask the user what was last completed and rebuild state from `git log` + working tree.
 

@@ -170,7 +170,7 @@ Skills are reusable, domain-specific instruction packs. Scan for relevant skills
 **Skill locations:**
 
 - Workspace: `.github/skills/`, `.claude/skills/`
-- User home: `~/.copilot/skills/`, `~/.claude/skills/`
+- User home: `~/.agents/skills/`, `~/.copilot/skills/`, `~/.claude/skills/`
 
 **Context7:** prefer Context7 MCP for up-to-date library APIs and configuration when official documentation is needed.
 

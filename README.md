@@ -109,8 +109,8 @@ Cadence uses specialized agents for different tasks. See [AGENTS.md](AGENTS.md) 
 
 - **Cadence** (Opus 4.6) — Plans, orchestrates, manages interaction
 - **Scout** (Gemini Flash) — Parallel read-only codebase exploration
-- **Builder** (Sonnet 4.5) — TDD-driven implementation
-- **Critic** (Sonnet 4.5) — Code review and verification
+- **Builder** (Opus 4.6 / Sonnet 4.6) — TDD-driven implementation
+- **Critic** (Opus 4.6 / Sonnet 4.6) — Code review and verification
 
 **Utility agents:**
 

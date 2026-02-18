@@ -76,7 +76,7 @@ Generate a prompt file with this structure:
 
 ````markdown
 ---
-agent: "true"
+agent: "agent"
 description: [Brief, action-oriented description]
 ---
 

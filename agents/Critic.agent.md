@@ -3,6 +3,7 @@ name: Critic
 description: "Code review specialist. Reviews changes for correctness, quality, and test coverage."
 argument-hint: "Review: <phase objective and list of modified files>"
 user-invocable: false
+disable-model-invocation: true
 tools: ["search/codebase", "search/textSearch", "search/usages", "search/changes", "read/readFile", "read/problems"]
 model: ["Claude Opus 4.6 (copilot)", "Claude Sonnet 4.6 (copilot)"]
 ---

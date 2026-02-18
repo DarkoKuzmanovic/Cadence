@@ -1,6 +1,7 @@
 ---
 name: code-review
 description: Code review assistance with linting, style checking, and best practices
+user-invocable: true
 license: Apache-2.0
 metadata:
   version: "1.0.0"

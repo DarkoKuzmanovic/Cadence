@@ -1,6 +1,7 @@
 ---
 name: gh-cli
 description: GitHub CLI (gh) wrapper for PR review workflows. Use when reviewing, merging, or managing pull requests and branches via the command line. Covers listing PRs, viewing diffs, checking CI status, leaving reviews, and merging.
+user-invocable: true
 ---
 
 # GitHub CLI Skill

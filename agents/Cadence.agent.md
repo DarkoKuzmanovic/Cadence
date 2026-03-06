@@ -126,6 +126,7 @@ When delegating to subagents, describe the **objective and acceptance criteria**
 - **APPROVED** → proceed to commit step.
 - **NEEDS_REVISION** → reinvoke Builder with Critic's feedback. **Max 2 revision cycles per phase.** If Builder fails to satisfy Critic after 2 attempts, STOP — present both attempts' issues to the user and ask for guidance.
 - **FAILED** → stop, present issues to user, ask for guidance.
+- **NEEDS_INFO** → clarify the objective/criteria and reinvoke Critic. Does NOT count toward the 2-revision limit.
 
 #### 3C. Commit
 
